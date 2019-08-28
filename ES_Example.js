@@ -60,11 +60,21 @@ console.log(x);
  
  
 
- const x=[1,3,4,5];
+const x=[1,3,4,5];
 console.log("X of Array " + x);
 const t=x.concat(6);
 console.log("T of an array " +t);
 //map function ()
+
+
+
+
+
+
+const x=[1,2,3,4,5].map((val)=>{ // here  using  Arrow function in sinlge line  with map function  and it will  create and retrun new array  with its values
+return val*val;
+})
+console.log(x);
 
 const z=t.map(index => index*4);// here each index is multiply by 4 
 console.log(z);
