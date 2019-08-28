@@ -31,7 +31,7 @@ console.log(x+10);
 }
 else 
 {
-    console.log("COndition is not satisfy !!!");
+    console.log("Condition is not satisfy !!!");
 }
 
 }
@@ -47,7 +47,7 @@ let x=function sum (a,b){// Funtion expression here  assign a funtion   to the v
     }
     else 
     {
-        console.log("COndition is not satisfy !!!");
+        console.log("Condition is not satisfy !!!");
     }
     
     };
@@ -78,8 +78,121 @@ console.log(x);
 
 const z=t.map(index => index*4);// here each index is multiply by 4 
 console.log(z);
+
+const a=[...x];// spread syntax or operator (...x  it will copy array  which reference key is x and copy  then crated new array )
+
 //foreach ()
+
+
+
 
 // filter()
 
  // object 
+
+
+// IIFE function example 
+let studentEnrollemtn={ //  this is  global  variable bcoz i want to access  this variable inside this project.
+    name:"", // this object is created and value is null  later i want to assing the value
+    lastname:"",
+    gender:"",
+    age:null,
+    grade=null,
+
+}
+const student ={
+
+    name:"Amber",
+    lastname:"karki",
+    gender:"male",
+    age:20,
+    
+    
+        }
+    
+    console.log(student);
+    
+    if(student.gender==='male')
+    {
+    (function(){ //IIFE concept
+    student.age+=5;
+    console.log("Your are ready to Join Programming Course: "+student.age);
+    })();
+    
+    
+    }
+    else
+    {
+    (function(){
+    console.log("Sorry !! Still you are too young :"+ student.age);
+    })();
+    }
+
+
+     // calling  function inside (parameters) example
+
+student.grade=4;// here  adding grade properties into the object student.
+console.log(student.grade);
+
+
+
+
+function enroll ()
+{
+
+    if(student.grade>=4)
+             {
+             (function (){
+       studentEnrollemtn.name=student.name;
+       studentEnrollemtn.lastname=student.lastname;
+       studentEnrollemtn.gender=student.gender;
+       studentEnrollemtn.age=student.age;
+       studentEnrollemtn.grade=student.grade;
+       let display;
+       for(display in studentEnrollemtn)
+       {
+           console.log(studentEnrollemtn[display]);
+       }
+             })();
+     
+
+    }
+    else 
+    {
+     console.log ("Only All the students grade information : ");
+    let z;
+            for(z in student)
+    {
+    console.log(student[z]);
+    }
+    }
+    }
+
+enroll();
+
+
+function sum(x,y=5)
+{
+
+    return x+y;
+}
+
+console.log(sum(5));// this will print 10
+console.log(sum(3,3))// this will print 6  due to the y's value changed .
+
+
+//filter method in 
+const coursegrade=[0,1,2,3,4,4,4,5,5,4,3,3,3,3,5,];//  grade array for example .
+
+function checkGrade(grade)//creating funtion  to to check all >4  course grade
+{
+return grade>=3;
+}
+
+function toFilter()
+{
+console.log(coursegrade.filter(checkGrade(3)));
+
+}
+
+toFilter() // but cant figure out error 
